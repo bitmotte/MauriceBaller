@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using PluginConfig.API;
 using PluginConfig.API.Decorators;
 using PluginConfig.API.Fields;
@@ -17,7 +19,7 @@ public static class MauriceConfigurator
     public static PluginConfigurator CreateConfigurator()
     {
         PluginConfigurator config = PluginConfigurator.Create("Maurice Baller", MyPluginInfo.PLUGIN_GUID);
-        Texture2D tex = LoadPNG(Path.Combine(BepInEx.Paths.PluginPath, "MauriceBaller/icon.png"));
+        Texture2D tex = LoadPNG($"{GetPluginPath()}/icon.png");
         Sprite icon = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
         config.image = icon;
 
@@ -74,16 +76,22 @@ public static class MauriceConfigurator
 
 
     public static Texture2D LoadPNG(string filePath) {
+	    Texture2D tex = null;
+	    byte[] fileData;
 
-	Texture2D tex = null;
-	byte[] fileData;
+	    if (File.Exists(filePath)) 	{
+	    	fileData = File.ReadAllBytes(filePath);
+	    	tex = new Texture2D(2, 2);
+	    	tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
+	    }
+	    return tex;
+    }
 
-	if (File.Exists(filePath)) 	{
-		fileData = File.ReadAllBytes(filePath);
-		tex = new Texture2D(2, 2);
-		tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
-	}
-	return tex;
-}
-
+    public static string GetPluginPath()
+    {
+        string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+        UriBuilder uri = new UriBuilder(codeBase);
+        string path = Uri.UnescapeDataString(uri.Path);
+        return Path.GetDirectoryName(path);
+    }
 }
