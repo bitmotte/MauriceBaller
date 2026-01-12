@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using HarmonyLib;
 using UnityEngine;
 
@@ -8,13 +9,24 @@ public class MauriceDeathPatch : MonoBehaviour
 {
     static void Postfix(SpiderBody __instance)
     {
+        if(__instance.transform.parent.parent.name.Contains("Disgrace")) {return;}
+        
         Rigidbody rb = __instance.GetComponentInChildren<Rigidbody>();
         rb.constraints = RigidbodyConstraints.None;
+        rb.isKinematic = false;
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.mass = AccessibleConfigs.MauriceMass;
 
-        __instance.gameObject.AddComponent<BallerGroundHit>();
+        PhysicMaterial mat = __instance.GetComponentInChildren<SphereCollider>().material;
+        mat.dynamicFriction = AccessibleConfigs.MauriceFriction;
+        mat.staticFriction = AccessibleConfigs.MauriceFriction;
+        mat.bounciness = AccessibleConfigs.MauriceBounciness;
 
-        MauriceConfigurator.allMauricePhysics.Add(rb);
+        __instance.gameObject.AddComponent<BallerInfo>();
+        __instance.transform.localRotation = Quaternion.Euler(15,0,0);
+
+        __instance.transform.parent.parent = SceneUtility.mauricePool;
     }
 }
 
@@ -30,10 +42,9 @@ public class MauriceRubblePatch : MonoBehaviour
         {
             return false;
         }
-        if (other.gameObject.CompareTag("Floor"))
-        {
-            __instance.gameObject.GetComponent<BallerGroundHit>().hitGround = true;
-        }
+        if (other.gameObject.CompareTag("Floor")) {return false;}
+        if (other.gameObject.CompareTag("Untagged")) {return false;}
+        __instance.gameObject.GetComponent<BallerInfo>().hitGround = true;
         return false;
     }
 }
@@ -43,7 +54,7 @@ public class MauriceFriendlyFirePatch : MonoBehaviour
 {
     static bool Prefix(SpiderBody __instance)
     {
-        BallerGroundHit hit = __instance.gameObject.GetComponent<BallerGroundHit>();
+        BallerInfo hit = __instance.gameObject.GetComponent<BallerInfo>();
         
         if(AccessibleConfigs.CanRollKill == true) {return true;}
         if(hit.hitGround == true) {return false;}
@@ -61,19 +72,6 @@ public class MauriceRubbleBreakPatch : MonoBehaviour
             return true;
         } 
         return false;
-    }
-}
-
-[HarmonyPatch(typeof(SpiderBody), "Die")]
-public class CGCleanerDisablePatch : MonoBehaviour
-{
-    static void Postfix(SpiderBody __instance)
-    {
-        if(AccessibleConfigs.CleanMauriceBodiesInCybergrind == true) {return;}
-        if(Plugin.sceneName != "9240e656c89994d44b21940f65ab57da") {return;}
-
-        __instance.transform.parent = null;
-        MauriceConfigurator.cgMaurices.Add(__instance.transform);       
     }
 }
 
