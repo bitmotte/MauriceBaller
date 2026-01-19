@@ -38,13 +38,30 @@ public class MauriceRubblePatch : MonoBehaviour
         Traverse instanceFields = Traverse.Create(__instance);
         bool falling = (bool)instanceFields.Field("falling").GetValue();
         
-        if(!falling)
-        {
-            return false;
+        if(__instance.gameObject.GetComponent<BallerInfo>().hitGround == true) { return false; }
+        if(!falling) { return false; }
+        if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("Untagged")) {
+            __instance.gameObject.GetComponent<BallerInfo>().hitGround = true;
+
+            //bring over base maurice functions
+            GoreZone gz = (GoreZone)instanceFields.Field("gz").GetValue();
+
+            Quaternion spriteRot = new();
+            spriteRot.eulerAngles = new Vector3(other.contacts[0].normal.x + 90f, other.contacts[0].normal.y, other.contacts[0].normal.z);
+
+            Vector3 spritePos = new Vector3(other.contacts[0].point.x, other.contacts[0].point.y + 0.1f, other.contacts[0].point.z);
+            AudioSource componentInChildren = Instantiate(__instance.shockwave.ToAsset(), spritePos, Quaternion.identity).GetComponentInChildren<AudioSource>();
+
+            Instantiate(__instance.impactParticle, __instance.transform.position, __instance.transform.rotation);
+            Instantiate(__instance.impactSprite, spritePos, spriteRot).transform.SetParent(gz.goreZone, worldPositionStays: true);
+
+            Breakable component4;
+            if (other.gameObject.TryGetComponent<Breakable>(out component4) && !component4.playerOnly && !component4.specialCaseOnly)
+            {
+                component4.Break();
+            }
         }
-        if (other.gameObject.CompareTag("Floor")) {return false;}
-        if (other.gameObject.CompareTag("Untagged")) {return false;}
-        __instance.gameObject.GetComponent<BallerInfo>().hitGround = true;
+
         return false;
     }
 }
