@@ -23,9 +23,8 @@
     <PackageReference Include="UnityEngine.Modules" Version="2022.3.29" IncludeAssets="compile" />
 
     <PackageReference Include="AssetsTools" Version="0.1.2" />
-    <PackageReference Include="R2API.Addressables" Version="1.1.3" />
 
-    <PackageReference Include="Ultrakill.GameLibs-Stripped" Version="0.0.16-d" />
+    <PackageReference Include="bitmotte.com.ULTRAKILL.Assemblies" Version="17.0.3" />
     
     <PackageReference Include="bitmotte.EternalsTeam.PluginConfigurator" Version="1.10.2" />
   </ItemGroup>
