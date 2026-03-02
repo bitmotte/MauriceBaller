@@ -1,4 +1,3 @@
-//using ;
 using HarmonyLib;
 using UnityEngine;
 
@@ -17,7 +16,9 @@ public class BallPatch : MonoBehaviour
 
         //SetupResource.SetupGameObject(ball,true,true);
 
-        Instantiate(ball);
+        GameObject newBall = Instantiate(ball);
+        newBall.AddComponent<PortalTravelFixer>();
+
         bundle.Unload(false);
 
         __instance.BreakCorpse();

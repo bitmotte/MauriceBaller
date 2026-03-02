@@ -25,12 +25,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314982071913849525}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 720235145918319223}
+  m_Father: {fileID: 2769626400682267245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &648660357357234178
 MonoBehaviour:
@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
+  - {fileID: 1861083106817534524}
   - {fileID: 4427221426850509221}
+  nonSolid: 0
 --- !u!1 &1861083106817534524
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,6 +59,8 @@ GameObject:
   - component: {fileID: 2769626400682267245}
   - component: {fileID: 2325848684672484766}
   - component: {fileID: 4938663610211782734}
+  - component: {fileID: 8282606222765040351}
+  - component: {fileID: 994461355606553035}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -78,6 +82,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 667724433808448616}
+  - {fileID: 1433730991347741201}
   m_Father: {fileID: 720235145918319223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &2325848684672484766
@@ -128,6 +133,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8282606222765040351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861083106817534524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1109df60cb27c921ab5d46530f76767c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &994461355606553035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861083106817534524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852ba943738e8f42eaedc14238a2b2b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformPosition: 1
+  transformRotation: 1
+  transformVelocity: 1
+  clearTrail: 1
+  travellerType: 5
+  travellerPosition: {x: 0, y: 0, z: 0}
+  travellerVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &2836060476486358539
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 720235145918319223}
+  - component: {fileID: 6828291687731067716}
   m_Layer: 0
   m_Name: MauriceBall
   m_TagString: Untagged
@@ -158,9 +195,20 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2769626400682267245}
-  - {fileID: 1433730991347741201}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6828291687731067716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2836060476486358539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf39cdfac0438479aec2e3486698848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4427221426850509221
 GameObject:
   m_ObjectHideFlags: 0

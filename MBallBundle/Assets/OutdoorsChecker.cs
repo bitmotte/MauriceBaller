@@ -5,4 +5,5 @@ using UnityEngine;
 public class OutdoorsChecker : MonoBehaviour
 {
     public GameObject[] targets;
+    public bool nonSolid;
 }
