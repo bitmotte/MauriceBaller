@@ -11,9 +11,11 @@ public class BallPatch : MonoBehaviour
     {
         AssetBundle bundle = BundleTool.Load("balls.bundle");
         GameObject ball = (GameObject)bundle.LoadAsset("Assets/MauriceBall.prefab");
-        SetupResource.SetupGameObject(ball,true);
-        
+
         ball.transform.position = __instance.transform.position;
+        ball.transform.rotation = __instance.transform.rotation;
+
+        //SetupResource.SetupGameObject(ball,true,true);
 
         Instantiate(ball);
         bundle.Unload(false);
