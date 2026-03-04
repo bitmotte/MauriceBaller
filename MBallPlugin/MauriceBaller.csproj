@@ -27,7 +27,7 @@
     <Reference Include="lib/UnityEngine.AssetBundleModule.dll" />
     <Reference Include="lib/Unity.ResourceManager.dll" />
 
-    <PackageReference Include="bitmotte.com.ULTRAKILL.Assemblies" Version="17.0.3" />
+    <PackageReference Include="bitmotte.com.ULTRAKILL.Assemblies" Version="17.1.0" />
     
     <PackageReference Include="bitmotte.EternalsTeam.PluginConfigurator" Version="1.10.2" />
 

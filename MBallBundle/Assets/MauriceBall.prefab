@@ -160,7 +160,7 @@ MonoBehaviour:
   transformPosition: 1
   transformRotation: 1
   transformVelocity: 1
-  clearTrail: 1
+  clearTrail: 0
   travellerType: 5
   travellerPosition: {x: 0, y: 0, z: 0}
   travellerVelocity: {x: 0, y: 0, z: 0}

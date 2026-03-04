@@ -2,10 +2,10 @@ using ULTRAKILL.Portal;
 using UnityEngine;
 
 namespace MauriceBaller;
-class PortalTravelFixer : MonoBehaviour 
+public class PortalTravelFixer : MonoBehaviour 
 {
     void Start()
     {
-        gameObject.GetComponentInChildren<SimplePortalTraveler>().SetType(PortalTravellerType.OTHER);
+        gameObject.GetComponent<SimplePortalTraveler>().SetType(PortalTravellerType.OTHER);
     }
 }
