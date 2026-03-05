@@ -17,7 +17,7 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: cc68c3176e705654393ccda95fe8055f
   m_SerializeEntries:
-  - m_GUID: f9ca1516bd400c917aaf56fa17604ac5
+  - m_GUID: 8b9ad3f2ff0c728dc92357dc8cd0948f
     m_Address: Assets/MauriceBall.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
