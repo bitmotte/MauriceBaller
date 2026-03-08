@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: cc68c3176e705654393ccda95fe8055f
   m_SerializeEntries:
-  - m_GUID: 8b9ad3f2ff0c728dc92357dc8cd0948f
-    m_Address: Assets/MauriceBall.prefab
+  - m_GUID: e198893cca4ec6c49ad1eb16d80a8d7b
+    m_Address: Assets/MaliciousCorpse.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
