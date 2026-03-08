@@ -1,4 +1,6 @@
+using System.Threading;
 using HarmonyLib;
+using ULTRAKILL.Enemy;
 using UnityEngine;
 
 namespace MauriceBaller;
@@ -46,5 +48,19 @@ public class BallPatch : MonoBehaviour
         __instance.BreakCorpse();
 
         return false;
+    }
+}
+
+[HarmonyPatch(typeof(TargetTracker), "RegisterTarget")]
+public class DontTargetBallPatch : MonoBehaviour
+{
+    static bool Prefix(TargetTracker __instance, ITarget target, CancellationToken token)
+    {
+        if(target.EID == null) {return true;}
+        if(target.EID.GetComponent<MaliciousCorpse>() != null)
+        {
+            return false;
+        }
+        return true;
     }
 }

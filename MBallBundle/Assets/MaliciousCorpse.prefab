@@ -1020,14 +1020,14 @@ MonoBehaviour:
   hitterWeapons: []
   weaknesses: []
   weaknessMultipliers: []
-  totalDamageTakenMultiplier: 1
+  totalDamageTakenMultiplier: 0
   weakPoint: {fileID: 0}
   overrideCenter: {fileID: 0}
   exploded: 0
   stationary: 0
   dead: 0
   usingDoor: {fileID: 0}
-  ignoredByEnemies: 0
+  ignoredByEnemies: 1
   nailsAmount: 0
   nails: []
   useBrakes: 0
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   flamableSize: {x: 0, y: 0, z: 0}
   harpooned: 0
   zapperer: {fileID: 0}
-  hookIgnore: 0
+  hookIgnore: 1
   sandified: 0
   blessed: 0
   puppet: 0
