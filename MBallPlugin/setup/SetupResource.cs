@@ -8,29 +8,24 @@ namespace MauriceBaller;
 
 public static class SetupResource
 {
-    public static GameObject SetupGameObject(GameObject gameObject, bool vertexLighting, bool enemy)
+    public static GameObject FixShader(GameObject gameObject)
     {
         // Load material with "ULTRAKILL/Master" shader . . . and grab its shader
         Shader Master = Addressables.LoadAssetAsync<Material>("Assets/Materials/Environment/Metal/Pattern 1/Metal Pattern 1 8.mat").WaitForCompletion().shader;
         
+        foreach (SkinnedMeshRenderer dynamic in gameObject.GetComponentsInChildren<SkinnedMeshRenderer>())
+        {
+            foreach (Material mat in dynamic.materials)
+            {
+                mat.shader = Master;
+            }
+        }
+
         foreach (MeshRenderer still in gameObject.GetComponentsInChildren<MeshRenderer>())
         {
             foreach (Material mat in still.materials)
             {
                 mat.shader = Master;
-                
-                List<string> keywords = [.. mat.shaderKeywords];
-                keywords.Add("ENEMY");
-                keywords.Add("PORTAL_CLIP_PLANE");
-                keywords.Add("VERTEX_LIGHTING");
-                keywords.Add("_FOG_ON");
-                keywords.Add("_GLITCHMODE_NONE");
-                keywords.Add("_RAINCEILINGTOGGLE_ON");
-                keywords.Add("_USEALBEDOASEMISIVE_ON");
-                keywords.Add("_VERTEXCOLORS_ON");
-                keywords.Add("_VERTEXLIGHTING_ON");
-                keywords.Add("_ZWRITE_ON");
-                mat.shaderKeywords = [.. keywords];
             }
         }
 

@@ -18,7 +18,17 @@ MonoBehaviour:
   m_GUID: cc68c3176e705654393ccda95fe8055f
   m_SerializeEntries:
   - m_GUID: e198893cca4ec6c49ad1eb16d80a8d7b
-    m_Address: Assets/MaliciousCorpse.prefab
+    m_Address: Assets/Baller/Corpse/MaliciousCorpse.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2dc4ef1320129eba824051222e4d70c
+    m_Address: Assets/Baller/ConductionGhost/MaliciousConductionGhost.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4001b12f5b2477344957d72c74575fac
+    m_Address: Assets/Baller/Variatioins/Plush/DevPlushie (bitmotte).prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -33,19 +33,7 @@ public class BallPatch : MonoBehaviour
         }
 
         //ballify
-        AssetBundle bundle = BundleTool.Load("balls.bundle");
-        GameObject ball = (GameObject)bundle.LoadAsset("Assets/MaliciousCorpse.prefab");
-        
-        ball.AddComponent<MaliciousCorpse>();
-        //MalCorpse > RotTransPortal > BodCenterRotPortal > Visual > Legs
-        ball.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(9).gameObject.AddComponent<CorpseLegController>();
-
-        ball.transform.position = __instance.transform.position;
-        ball.transform.rotation = __instance.transform.rotation;
-
-        Instantiate(ball);
-
-        bundle.Unload(false);
+        SecretVariations.MakeBallWithSecretPossibility(__instance.gameObject);
 
         __instance.BreakCorpse();
 
