@@ -29,6 +29,17 @@ public static class SetupResource
             }
         }
 
+        foreach (ParticleSystem particle in gameObject.GetComponentsInChildren<ParticleSystem>())
+        {
+            foreach (Renderer still in particle.gameObject.GetComponentsInChildren<Renderer>())
+            {
+                foreach (Material mat in still.materials)
+                {
+                    mat.shader = Master;
+                }
+            }
+        }
+
         return gameObject;
     }
 }

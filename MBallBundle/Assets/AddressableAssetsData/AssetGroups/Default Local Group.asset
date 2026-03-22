@@ -27,8 +27,73 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4001b12f5b2477344957d72c74575fac
-    m_Address: Assets/Baller/Variatioins/Plush/DevPlushie (bitmotte).prefab
+  - m_GUID: db19fd85e31f615419e8b97b1ab0de2f
+    m_Address: Assets/Baller/Variations/Plush/DevPlushie (bitmotte).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9726a12673b1891af87b7319b1716bfd
+    m_Address: Assets/Baller/Variations/Gold/Gold.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71850c82f4a9bbd37bf73be5d8c5a0b7
+    m_Address: Assets/Baller/Variations/HellEye/HellEye.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d054beaadae8481d8b433450b8627fc6
+    m_Address: Assets/Baller/Variations/Loss/Loss.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59a132ebb7d6148938cdb3c48e9faeea
+    m_Address: Assets/Baller/Variations/EvilMeanGreen/Green.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1eaaf4d48b315a67a6a9041e59b486d
+    m_Address: Assets/Baller/Variations/EvilMeanGreen/GreenFlash.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e775fbe200e517c8ea5fd083f17b8a6c
+    m_Address: Assets/Baller/Variations/Big/Big.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10e0b095272dd86e0bde11fb21a3f813
+    m_Address: Assets/Baller/Variations/Virtue/Virtue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe8f9a8da6fe8305691287b9a0dcf7e5
+    m_Address: Assets/Baller/Variations/Maurfire/Maurfire.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e70ec58c8903a34eaf5a3244e64791d
+    m_Address: Assets/Baller/Variations/Looker/Looker.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdb52d9ca26d58111b18b01bc350529c
+    m_Address: Assets/Baller/Variations/FalseVirtue/FalseVirtue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43e049ddf92d8cd359ee8c6825f47c9c
+    m_Address: Assets/Baller/Variations/Ballrice/Ballrice.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ad8d22d262bef43a89416f5d9b783fb
+    m_Address: Assets/Baller/Variations/Moai/Moai.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b8bb9aa9fcc0be8f8d217ea74867c17
+    m_Address: Assets/Baller/Variations/BallerBlockMan/BallerBlockMan.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
