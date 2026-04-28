@@ -4,20 +4,37 @@ using UnityEngine.Events;
 namespace MauriceBaller;
 public class MaliciousCorpse : EnemyScript 
 {
-    public int test = 0;
     public EnemyIdentifier eid;
     public Enemy en;
     public Machine mach;
+    public Rigidbody rb;
+
+    public Animator controller;
+
+    //settings
+    public bool variation = false;
+
+    public float mass;
+    public float bounciness;
 
     public void Awake()
     {
         eid = GetComponent<EnemyIdentifier>();
         en = GetComponent<Enemy>();
         mach = GetComponent<Machine>();
+        rb = GetComponent<Rigidbody>();
+
+        controller = GetComponent<Animator>();
+
         UnityEvent deathEvent = new();
         deathEvent.AddListener(Break);
 
         eid.onDeath = deathEvent;
+
+        if(variation)
+        {
+            controller.SetBoolString("Variation",true);
+        }
     }
 
     public override void OnDamage(ref DamageData data)
@@ -26,6 +43,11 @@ public class MaliciousCorpse : EnemyScript
         {
             Break();
         }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        controller.SetTriggerString("Hit");
     }
 
     public void Break()

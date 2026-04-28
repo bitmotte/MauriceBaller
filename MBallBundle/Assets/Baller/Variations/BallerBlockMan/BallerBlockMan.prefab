@@ -178,7 +178,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.18999997, y: 0.116, z: 0.0030017495}
+  m_ConnectedAnchor: {x: 0.027999882, y: -0.001599938, z: 0.0016009808}
   serializedVersion: 2
   m_Spring: 10000
   m_Damper: 0.2
@@ -263,7 +263,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.18999997, y: 0.116, z: 0.0030017495}
+  m_ConnectedAnchor: {x: 0.011999609, y: 0.033999957, z: -0.016998952}
   serializedVersion: 2
   m_Spring: 10000
   m_Damper: 0.2
@@ -1004,7 +1004,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.18999997, y: 0.116, z: 0.0030017495}
+  m_ConnectedAnchor: {x: 0.00399999, y: 0.11599987, z: 0.01700139}
   serializedVersion: 2
   m_Spring: 10000
   m_Damper: 0.2
@@ -1089,7 +1089,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.18999997, y: 0.116, z: 0.0030017495}
+  m_ConnectedAnchor: {x: -0.016000034, y: 0.01060016, z: -0.0027989838}
   serializedVersion: 2
   m_Spring: 10000
   m_Damper: 0.2
@@ -1342,7 +1342,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.382, y: 0.116, z: -2.807}
+  m_ConnectedAnchor: {x: 0.18999998, y: 0.116, z: 0.0030007958}
   serializedVersion: 2
   m_Spring: 10000
   m_Damper: 0.2
@@ -1363,6 +1363,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2071247657266450518, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
+      propertyPath: targets.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071247657266450518, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
+      propertyPath: targets.Array.data[1]
+      value: 
+      objectReference: {fileID: 475894363174544567}
+    - target: {fileID: 2071247657266450518, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
+      propertyPath: targets.Array.data[2]
+      value: 
+      objectReference: {fileID: 6212848776357309433}
+    - target: {fileID: 2071247657266450518, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
+      propertyPath: targets.Array.data[3]
+      value: 
+      objectReference: {fileID: 4601743079809870511}
+    - target: {fileID: 2071247657266450518, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
+      propertyPath: targets.Array.data[4]
+      value: 
+      objectReference: {fileID: 1720545644899848298}
+    - target: {fileID: 2071247657266450518, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
+      propertyPath: targets.Array.data[5]
+      value: 
+      objectReference: {fileID: 1447484544583059824}
+    - target: {fileID: 2071247657266450518, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
+      propertyPath: targets.Array.data[6]
+      value: 
+      objectReference: {fileID: 8344985897581964697}
+    - target: {fileID: 4213145534990604982, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 910af2df2a23f4ec9ab82a2f50812453, type: 2}
     - target: {fileID: 6217813857677405988, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

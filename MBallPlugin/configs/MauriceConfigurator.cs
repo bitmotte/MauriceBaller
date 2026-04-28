@@ -10,15 +10,19 @@ public static class MauriceConfigurator
     {
         PluginConfigurator config = PluginConfigurator.Create("Maurice Baller", MyPluginInfo.PLUGIN_GUID);
 
+        PluginConfig.API.Functionals.ButtonField cleanMaurices = new(config.rootPanel, "Clean up", "clean_maurice");
         ConfigSpace space1 = new(config.rootPanel, 15f);
-        PluginConfig.API.Functionals.ButtonField cleanMauricesButton = new(config.rootPanel, "Clean up Maurice corpses", "clean_maurice");
-        ConfigSpace space2 = new(config.rootPanel, 15f);
-        BoolField breakField = new(config.rootPanel, "Maurices can be broken", "can_break_dead_maurice", true);
-        FloatField massField = new(config.rootPanel, "Maurice Mass", "maurice_mass", 5f);
-        FloatField bounceField = new(config.rootPanel, "Maurice Bounciness", "maurice_bounciness", 0f);
 
-        ConfigHeader cheatsPanel = new(config.rootPanel, "Cheats (Disable when playing campaign)");
-        BoolField mauriceRollKill = new(config.rootPanel, "Enemies can be MAURICED by rolling", "can_roll_kill", false);
+        ConfigPanel breakers = new(config.rootPanel,"Breakers","breakers_panel");
+        PluginConfig.API.Functionals.ButtonField enableAllBreakers = new(config.rootPanel, "Enable All", "breakers_all");
+        PluginConfig.API.Functionals.ButtonField disableAllBreakers = new(config.rootPanel, "Disable All", "breakers_none");
+        ConfigSpace space2 = new(config.rootPanel, 15f);
+
+        BoolField gravity = new(config.rootPanel, "Gravity", "gravity", true);
+        FloatSliderField mass = new(config.rootPanel, "Mass", "maurice_mass", new(0f,100f),5f);
+        FloatSliderField bounciness = new(config.rootPanel, "Bounciness", "maurice_bounciness", new(0f,100f),0f);
+
+        ConfigHeader cheats = new(config.rootPanel, "Cheats (Disable when playing campaign)");
         
         return config;
     }

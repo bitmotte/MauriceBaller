@@ -6,7 +6,7 @@ public static class SecretVariations
     public static void MakeBallWithSecretPossibility(GameObject gameObject)
     {
         //1,101 for 1 in 100 chance
-        int luck = Random.RandomRangeInt(1,101);
+        int luck = Random.RandomRangeInt(1,2);
         if(luck == 1)
         {
             int luckVariation = Random.RandomRangeInt(1,14);
@@ -54,7 +54,25 @@ public static class SecretVariations
             }
             return;
         }
-        GenericCorpse("Assets/Baller/Corpse/MaliciousCorpse.prefab",gameObject);
+        GenericCorpseNoJingle("Assets/Baller/Corpse/MaliciousCorpse.prefab",gameObject);
+    }
+
+    public static void GenericCorpseNoJingle(string key, GameObject dead)
+    {
+        AssetBundle bundle = BundleTool.Load("balls.bundle");
+        GameObject ball = (GameObject)bundle.LoadAsset(key);
+        SetupResource.FixShader(ball);
+        
+        ball.AddComponent<MaliciousCorpse>();
+        //MalCorpse > RotTransPortal > BodCenterRotPortal > Visual > Legs
+        ball.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).gameObject.AddComponent<CorpseLegController>();
+
+        ball.transform.position = dead.transform.position;
+        ball.transform.rotation = dead.transform.rotation;
+
+        Object.Instantiate(ball);
+
+        bundle.Unload(false);
     }
 
     public static void GenericCorpse(string key, GameObject dead)
@@ -63,9 +81,11 @@ public static class SecretVariations
         GameObject ball = (GameObject)bundle.LoadAsset(key);
         SetupResource.FixShader(ball);
         
-        ball.AddComponent<MaliciousCorpse>();
+        MaliciousCorpse controller = ball.AddComponent<MaliciousCorpse>();
+        controller.variation = true;
+
         //MalCorpse > RotTransPortal > BodCenterRotPortal > Visual > Legs
-        ball.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(9).gameObject.AddComponent<CorpseLegController>();
+        ball.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).gameObject.AddComponent<CorpseLegController>();
 
         ball.transform.position = dead.transform.position;
         ball.transform.rotation = dead.transform.rotation;
@@ -81,9 +101,11 @@ public static class SecretVariations
         GameObject ball = (GameObject)bundle.LoadAsset(key);
         SetupResource.FixShader(ball);
         
-        ball.AddComponent<MaliciousCorpse>();
+        MaliciousCorpse controller = ball.AddComponent<MaliciousCorpse>();
+        controller.variation = true;
+
         //MalCorpse > RotTransPortal > BodCenterRotPortal > Visual > Legs
-        Object.Destroy(ball.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(9).gameObject);
+        Object.Destroy(ball.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).gameObject);
 
         ball.transform.position = dead.transform.position;
         ball.transform.rotation = dead.transform.rotation;
@@ -113,12 +135,14 @@ public static class SecretVariations
         GameObject ball = (GameObject)bundle.LoadAsset(key);
         SetupResource.FixShader(ball);
         
-        ball.AddComponent<MaliciousCorpse>();
+        MaliciousCorpse controller = ball.AddComponent<MaliciousCorpse>();
+        controller.variation = true;
+
         EvilMeanGreen evilMeanGreen = ball.AddComponent<EvilMeanGreen>();
         evilMeanGreen.green = (GameObject)bundle.LoadAsset("Assets/Baller/Variations/EvilMeanGreen/GreenFlash.prefab");
 
         //MalCorpse > RotTransPortal > BodCenterRotPortal > Visual > Legs
-        ball.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(9).gameObject.AddComponent<CorpseLegController>();
+        ball.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).gameObject.AddComponent<CorpseLegController>();
 
         ball.transform.position = dead.transform.position;
         ball.transform.rotation = dead.transform.rotation;

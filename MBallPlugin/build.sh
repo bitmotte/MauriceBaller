@@ -34,6 +34,10 @@ fi
 
 echo ""
 echo "building. . ."
+
+./copybundle.sh
+echo ""
+
 dotnet build "MauriceBaller.sln"
 
 userpath=$(< "./resources/buildsettings" )
