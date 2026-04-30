@@ -15,7 +15,11 @@ public class BallerLeg : MonoBehaviour
         joint2 = transform.GetChild(1);
         joint3 = transform.GetChild(2);
 
-        legRenderer = transform.GetChild(3).gameObject.AddComponent<LineRenderer>();
+        transform.GetChild(3).gameObject.TryGetComponent(out legRenderer);
+        if(legRenderer == null)
+        {
+            legRenderer = transform.GetChild(3).gameObject.AddComponent<LineRenderer>();   
+        }
         legRenderer.positionCount = 3;
 
         goodToGo = true;

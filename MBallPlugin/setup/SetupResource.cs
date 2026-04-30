@@ -25,7 +25,14 @@ public static class SetupResource
         {
             foreach (Material mat in still.materials)
             {
-                mat.shader = Master;
+                if(mat.shader.name == "Hidden/InternalErrorShader")
+                    {
+                        mat.shader = Addressables.LoadAssetAsync<Material>("Assets/Materials/Dev/FadeToWhite.mat").WaitForCompletion().shader;
+                    }
+                    else
+                    {
+                        mat.shader = Master;
+                    }
             }
         }
 
@@ -35,7 +42,14 @@ public static class SetupResource
             {
                 foreach (Material mat in still.materials)
                 {
-                    mat.shader = Master;
+                    if(mat.shader.name == "Hidden/InternalErrorShader")
+                    {
+                        mat.shader = Addressables.LoadAssetAsync<Material>("Assets/Materials/Dev/FadeToWhite.mat").WaitForCompletion().shader;
+                    }
+                    else
+                    {
+                        mat.shader = Master;
+                    }
                 }
             }
         }

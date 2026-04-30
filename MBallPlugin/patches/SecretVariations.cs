@@ -6,10 +6,10 @@ public static class SecretVariations
     public static void MakeBallWithSecretPossibility(GameObject gameObject)
     {
         //1,101 for 1 in 100 chance
-        int luck = Random.RandomRangeInt(1,2);
+        int luck = Random.RandomRangeInt(1,101);
         if(luck == 1)
         {
-            int luckVariation = Random.RandomRangeInt(1,14);
+            int luckVariation = Random.RandomRangeInt(1,15);
             switch (luckVariation)
             {
                 default:

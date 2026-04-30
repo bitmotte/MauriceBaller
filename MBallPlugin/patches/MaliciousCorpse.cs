@@ -14,10 +14,15 @@ public class MaliciousCorpse : EnemyScript
     //settings
     public bool variation = false;
 
+    public bool gravity;
+    
     public float mass;
+    public float massVariance;
+    
     public float bounciness;
+    public float bouncinessVariance;
 
-    public void Awake()
+    public void Start()
     {
         eid = GetComponent<EnemyIdentifier>();
         en = GetComponent<Enemy>();
@@ -39,6 +44,7 @@ public class MaliciousCorpse : EnemyScript
 
     public override void OnDamage(ref DamageData data)
     {
+        //Plugin.Logger.LogInfo(data.hitter);
         if(eid.health <= 0 || data.hitter == "ground slam")
         {
             Break();

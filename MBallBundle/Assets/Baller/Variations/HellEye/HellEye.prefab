@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4213145534990604982, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e336c521e3d5764d3b8c1306c0e42382, type: 2}
     - target: {fileID: 6217813857677405988, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -66,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6904427591624082995, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
       propertyPath: m_Name
-      value: Gold
+      value: HellEye
       objectReference: {fileID: 0}
     - target: {fileID: 8047339127733769547, guid: e198893cca4ec6c49ad1eb16d80a8d7b, type: 3}
       propertyPath: m_Materials.Array.data[0]
